@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>魔法通貨換算</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+    <h1>魔法通貨換算</h1>
+
+    <!-- 機能①: 一つの入力から結果を表示 -->
+    <h2>日本円から魔法通貨</h2>
+    <form method="POST" action="/">
+        <label for="input_value">計算する金額（円）:</label>
+        <input type="text" id="input_value" name="input_value" required>
+        <input type="submit" value="計算">
+    </form>
+
+    {% if result1 %}
+        <h3>{{ result1 }}</h3>
+    {% endif %}
+
+    <!-- 機能②: ３つの数値の入力から結果を表示 -->
+    <h2>魔法通貨から日本円</h2>
+    <form method="POST" action="/">
+        <label for="input_value1">ガリオン :</label>
+        <input type="text" id="input_value1" name="input_value1" required><br>
+
+        <label for="input_value2">シックル :</label>
+        <input type="text" id="input_value2" name="input_value2" required><br>
+
+        <label for="input_value3">クヌート :</label>
+        <input type="text" id="input_value3" name="input_value3" required><br>
+
+        <input type="submit" value="計算">
+    </form>
+
+    {% if result2 %}
+        <h3>{{ result2 }}</h3>
+    {% endif %}
+
+    <div class="footer">
+        &copy; 2023
+    </div>
+</body>
+</html>
